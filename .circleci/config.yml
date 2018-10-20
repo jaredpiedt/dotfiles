@@ -1,9 +1,8 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
-      - image: circleci/buildpack-deps
+      - image: jess/shellcheck
     steps:
       - checkout
-      - setup_remote_docker
-      - run: make test
+      - run: ./test.sh
