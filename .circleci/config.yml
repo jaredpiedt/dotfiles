@@ -2,7 +2,12 @@ version: 2
 jobs:
   test:
     docker:
-      - image: jess/shellcheck
+    - image: jess/shellcheck
     steps:
       - checkout
       - run: ./test.sh
+workflows:
+  version: 2
+  worflow:
+    jobs:
+      - test
