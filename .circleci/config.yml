@@ -1,11 +1,9 @@
 version: 2
 jobs:
-  test:
+  build:
     steps:
       - checkout
-
       - setup_remote_docker
-
       - run:
         name: Run tests
         command: make test
