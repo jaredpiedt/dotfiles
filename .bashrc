@@ -90,6 +90,10 @@ if [[ -d /etc/bash_completion.d/ ]]; then
 	done
 fi
 
+# Use a tty for gpg
+GPG_TTY=$(tty)
+export GPT_TTY
+
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 
