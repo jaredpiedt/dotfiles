@@ -5,7 +5,7 @@ Most of this was taken from [@jessfraz](https://github.com/jessfraz)'s [dotfiles
 
 ## Installation
 ```bash
-make test
+make
 ```
 This will create symlinks from this repo to your home folder.
 
