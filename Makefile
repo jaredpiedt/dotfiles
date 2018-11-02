@@ -1,5 +1,5 @@
 .PHONY: all
-all: dotfiles ## Installs the dotfiles.
+all: dotfiles etc ## Installs the dotfiles and etc directory files.
 
 .PHONY: dotfiles
 dotfiles: ## Installs the dotfiles.
@@ -14,6 +14,14 @@ dotfiles: ## Installs the dotfiles.
 	mkdir -p $(HOME)/.config;
 	mkdir -p $(HOME)/.local/share;
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
+
+.PHONY: etc
+etc: ## Installs the etc directory files.
+	for file in $(shell find $(CURDIR)/etc -type f -not -name ".*.swp"); do \
+		f=$$(echo $$file | sed -e 's|$(CURDIR)||'); \
+		sudo mkdir -p $$(dirname $$f); \
+		sudo ln -f $$file $$f; \
+	done
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository
