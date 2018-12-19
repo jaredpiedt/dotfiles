@@ -94,6 +94,11 @@ fi
 GPG_TTY=$(tty)
 export GPG_TTY
 
+# Docker
+docker-logs() {
+  docker logs -f $(docker ps | grep $1 | awk '{print $1}')
+}
+
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 
