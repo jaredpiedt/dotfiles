@@ -1,16 +1,21 @@
 # dotfiles
+
 [![CircleCI](https://circleci.com/gh/jaredpiedt/dotfiles.svg?style=svg)](https://circleci.com/gh/jaredpiedt/dotfiles)
 
 Most of this was taken from [@jessfraz](https://github.com/jessfraz)'s [dotfiles](https://github.com/jessfraz/dotfiles).
 
 ## Installation
+
 ```bash
 make
 ```
+
 This will create symlinks from this repo to your home folder.
 
 ## Customize
+
 Save env vars, etc in a `.extra` file, that looks something like this:
+
 ```bash
 ###
 ### Git credentials
