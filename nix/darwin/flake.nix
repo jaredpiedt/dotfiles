@@ -74,6 +74,11 @@
           done
         '';
 
+      system.defaults = {
+        finder.AppleShowAllFiles = true;
+        magicmouse.MouseButtonMode = "TwoButton";
+      };
+
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
 
