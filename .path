@@ -1,21 +1,12 @@
-#!/bin/sh
+#!/bin/zsh
 
 # go path
 export GOPATH=${HOME}/go
+export PATH=$PATH:$GOPATH/bin
 
 # update path
-export PATH=/usr/local/bin:${PATH}:/sbin
+export PATH=/opt/homebrew/bin:${PATH}:/sbin
 
-# add go path
-export PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
+export PATH="${PATH}:${HOME}/bin"
 
-# udpate cdpath
-export CDPATH=${CDPATH}:${GOPATH}/src/github.com
-
-# The next line updates PATH for the Google Cloud SDK.
-# shellcheck source=/dev/null
-if [ -f "${HOME}/google-cloud-sdk/path.bash.inc" ]; then . "${HOME}/google-cloud-sdk/path.bash.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-# shellcheck source=/dev/null
-if [ -f "${HOME}/google-cloud-sdk/completion.bash.inc" ]; then . "${HOME}/google-cloud-sdk/completion.bash.inc"; fi
+export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.11/bin

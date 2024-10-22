@@ -22,7 +22,7 @@ dotfiles: ## Installs the dotfiles.
 	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	mkdir -p $(HOME)/.config;
 	mkdir -p $(HOME)/.local/share;
-	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
+	# ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 
 .PHONY: etc
 etc: ## Installs the etc directory files.

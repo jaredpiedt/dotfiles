@@ -1,4 +1,4 @@
-#!/bin/bash
+export AWS_REGION=us-east-1
 
 # Larger bash history (allow 32³ entries; default is 500)
 export HISTSIZE=50000000;
@@ -7,12 +7,8 @@ export HISTCONTROL=ignoredups;
 # Make some commands not show up in history
 export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h:pony:pony add *:pony update *:pony save *:pony ls:pony ls *";
 
+export HOMEBREW_NO_ANALYTICS=1
+
 # Prefer US English and use UTF-8
 export LANG="en_US.UTF-8";
 export LC_ALL="en_US.UTF-8";
-
-# if it's an ssh session export GPG_TTY
-if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-	GPG_TTY=$(tty)
-	export GPG_TTY
-fi

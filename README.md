@@ -1,32 +1,41 @@
 # dotfiles
 
-[![CircleCI](https://circleci.com/gh/jaredpiedt/dotfiles.svg?style=svg)](https://circleci.com/gh/jaredpiedt/dotfiles)
+My dotfile configuration for MacOS.
 
-Most of this was taken from [@jessfraz](https://github.com/jessfraz)'s [dotfiles](https://github.com/jessfraz/dotfiles).
+## Dependencies
+
+Install [Homebrew](https://docs.brew.sh/Installation):
+
+```bash
+mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+
+eval "$(homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
+```
+
+Install [stow](https://www.gnu.org/software/stow/):
+
+```bash
+brew install stow
+```
 
 ## Installation
 
 ```bash
-make
+./setup.sh
 ```
 
-This will create symlinks from this repo to your home folder.
-
-## Customize
-
-Save env vars, etc in a `.extra` file, that looks something like this:
+Install Nix
 
 ```bash
-###
-### Git credentials
-###
+sh <(curl -L https://nixos.org/nix/install)
+```
 
-GIT_AUTHOR_NAME="Your Name"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="email@you.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-GH_USER="nickname"
-git config --global github.user "$GH_USER"
+### Mac
+
+Install `nix-darwin`
+
+```bash
+nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ./nix/darwin#piedt
 ```
