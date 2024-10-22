@@ -1,6 +1,11 @@
-{ config, pkgs, ... }:
-
-{
+{ 
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  inherit (config.lib.file) mkOutOfStoreSymlink;
+in {
   home.username = "jared";
   home.homeDirectory = "/Users/jared";
 
@@ -16,4 +21,14 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-};
+
+  programs = {
+    git = import ../home/git.nix { inherit config pkgs; };
+    gpg = import ../home/gpg.nix { inherit pkgs; };
+    zsh = import ../home/zsh.nix { inherit config pkgs lib; };
+  };
+
+  home.file.".gnupg/gpg-agent.conf".text = ''
+    pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
+  '';
+}
