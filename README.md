@@ -1,40 +1,20 @@
 # dotfiles
 
-My dotfile configuration for MacOS.
+My dotfile configuration.
 
 ## Dependencies
 
-Install [Homebrew](https://docs.brew.sh/Installation):
-
-```bash
-mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
-
-eval "$(homebrew/bin/brew shellenv)"
-brew update --force --quiet
-chmod -R go-w "$(brew --prefix)/share/zsh"
-```
-
-Install [stow](https://www.gnu.org/software/stow/):
-
-```bash
-brew install stow
-```
-
-## Installation
-
-```bash
-./setup.sh
-```
-
-Install Nix
+Install [Nix](https://nixos.org/download/).
 
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
+## Installation
+
 ### Mac
 
-Install `nix-darwin`
+Apply the Nix configuration.
 
 ```bash
 nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ./nix/darwin#piedt

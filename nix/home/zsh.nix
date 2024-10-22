@@ -5,7 +5,20 @@
   ...
 }: {
   enable = true;
-  history.size = 10000;
+  history = {
+    ignorePatterns = [
+      " *"
+      "ls"
+      "cd"
+      "cd -"
+      "pwd"
+      "exit"
+      "date"
+      "* --help"
+      "* -h"
+    ];
+    size = 10000;
+  };
   shellAliases = {
     grep = "grep --color=auto";
     localip = "sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'";
