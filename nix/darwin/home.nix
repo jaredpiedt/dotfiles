@@ -1,11 +1,13 @@
-{ 
+{
   config,
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   inherit (config.lib.file) mkOutOfStoreSymlink;
-in {
+in
+{
   home.username = "jared";
   home.homeDirectory = "/Users/jared";
 
@@ -25,6 +27,7 @@ in {
   programs = {
     git = import ../home/git.nix { inherit config pkgs; };
     gpg = import ../home/gpg.nix { inherit pkgs; };
+    vscode = import ../home/vscode.nix { inherit pkgs; };
     zsh = import ../home/zsh.nix { inherit config pkgs lib; };
   };
 

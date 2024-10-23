@@ -1,8 +1,5 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   enable = true;
   userName = "Jared Piedt";
   userEmail = "jared@piedt.com";
@@ -41,7 +38,7 @@
       "git://github.com/" = {
         insteadOf = "https://github.com/";
       };
-      
+
       # Multiple pushInsteadOf for gist
       "git@gist.github.com:" = {
         insteadOf = "gst:";

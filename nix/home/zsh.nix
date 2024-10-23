@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   enable = true;
   history = {
     ignorePatterns = [
