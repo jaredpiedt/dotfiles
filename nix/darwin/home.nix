@@ -34,4 +34,16 @@ in
   home.file.".gnupg/gpg-agent.conf".text = ''
     pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
   '';
+
+  home.file.".wezterm.lua".text = ''
+    local wezterm = require 'wezterm'
+
+    -- This will hold the configuration
+    local config = wezterm.config_builder()
+
+    config.color_scheme = 'Tokyo Night'
+    config.font_size = 16.0
+
+    return config
+  '';
 }

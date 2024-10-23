@@ -49,6 +49,7 @@
             pkgs.tgswitch
             pkgs.tmux
             pkgs.vscode
+            pkgs.wezterm
           ];
 
           fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
@@ -80,8 +81,16 @@
             '';
 
           system.defaults = {
+            dock.persistent-apps = [
+              "${pkgs.wezterm}/Applications/WezTerm.app"
+              "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            ];
             finder.AppleShowAllFiles = true;
             magicmouse.MouseButtonMode = "TwoButton";
+            NSGlobalDomain = {
+              InitialKeyRepeat = 15; # slider values: 120, 94, 68, 35, 25, 15
+              KeyRepeat = 2; # slider values: 120, 90, 60, 30, 12, 6, 2
+            };
           };
 
           # Auto upgrade nix package and the daemon service.
