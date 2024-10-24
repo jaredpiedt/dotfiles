@@ -22,7 +22,10 @@
     }@inputs:
     let
       add-unstable-packages = final: _prev: {
-        unstable = import inputs.nixpkgs-unstable { system = "aarch64-darwin"; };
+        unstable = import inputs.nixpkgs-unstable {
+          config.allowUnfree = true;
+          system = "aarch64-darwin";
+        };
       };
       username = "jared";
       configuration =
