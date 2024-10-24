@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository contains my personal configuration files (dotfiles), managed with Nix. These dotfiles automate the setup and configuration of development tools, terminal settings, and more.
+This repository contains my personal configuration files (dotfiles), managed with [Nix](https://nixos.org/) and [Home Manager](https://nix-community.github.io/home-manager/). These dotfiles automate the setup and configuration of development tools, terminal settings, and more.
 
 ## Dependencies
 
