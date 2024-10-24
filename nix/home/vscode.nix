@@ -39,12 +39,66 @@
   ];
 
   userSettings = {
-    "aws.telemetry" = false;
-    "dbt.altimateAiKey" = "8b4a3543fcb2812c368ac2f07f077f97";
-    "dbt.altimateInstanceName" = "greynoise";
-    "dbt.fileNameTemplateGenerateModel" = "{prefix}_{sourceName}__{tableName}";
-    "dbt.enableCollaboration" = false;
-    "dbt.prefixGenerateModel" = "stg";
+    "[graphql]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+    };
+    "[hcl]" = {
+      "editor.tabSize" = 2;
+    };
+    "[helmfile]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = false;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+    };
+    "[javascript]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+    };
+    "[json]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+      "editor.suggest.insertMode" = "replace";
+      "gitlens.codeLens.scopes" = [ "document" ];
+    };
+    "[jsonc]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+      "editor.suggest.insertMode" = "replace";
+      "gitlens.codeLens.scopes" = [ "document" ];
+    };
+    "[markdown]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+    };
+    "[nix]" = {
+      "editor.formatOnSave" = true;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+    };
+    "[terraform]" = {
+      "editor.defaultFormatter" = "hashicorp.terraform";
+      "editor.formatOnSave" = true;
+      "editor.tabSize" = 2;
+    };
+    "[typescriptreact]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+    };
+    "[yaml]" = {
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+      "editor.autoIndent" = "advanced";
+      "gitlens.codeLens.scopes" = [ "document" ];
+    };
     "diffEditor.maxComputationTime" = 0;
     "editor.fontFamily" = "CommitMono, Menlo, Monaco, 'Courier New', monospace";
     "editor.fontLigatures" = true;
@@ -78,53 +132,8 @@
         "tools,integration_test"
       ];
     };
-    "[graphql]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
-    };
-    "[helmfile]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = false;
-      "editor.insertSpaces" = true;
-      "editor.tabSize" = 2;
-    };
-    "[hcl]" = {
-      "editor.tabSize" = 2;
-    };
-    "[javascript]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.insertSpaces" = true;
-      "editor.tabSize" = 2;
-    };
     "javascript.updateImportsOnFileMove.enabled" = "always";
-    "[json]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
-      "editor.quickSuggestions.strings" = true;
-      "editor.insertSpaces" = true;
-      "editor.tabSize" = 2;
-      "editor.suggest.insertMode" = "replace";
-      "gitlens.codeLens.scopes" = [ "document" ];
-    };
-    "[jsonc]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
-      "editor.quickSuggestions.strings" = true;
-      "editor.insertSpaces" = true;
-      "editor.tabSize" = 2;
-      "editor.suggest.insertMode" = "replace";
-      "gitlens.codeLens.scopes" = [ "document" ];
-    };
-    "[markdown]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
-    };
     "merge-conflict.codeLens.enabled" = false;
-    "[nix]" = {
-      "editor.formatOnSave" = true;
-      "editor.insertSpaces" = true;
-      "editor.tabSize" = 2;
-    };
     "nix.enableLanguageServer" = true;
     "nix.formatterPath" = "nixfmt";
     "nix.serverPath" = "nixd";
@@ -136,45 +145,15 @@
       };
     };
     "prettier.singleQuote" = true;
-    "prisma.showPrismaDataPlatformNotification" = false;
-    "protoc" = { };
-    "sqlfluff.dialect" = "snowflake";
-    "sqlfluff.format.languages" = [
-      "sql"
-      "sql-bigquery"
-      "jinja-sql"
-      "postgres"
-      "snowflake-sql"
-    ];
-    "sqlfluff.linter.run" = "onSave";
-    "sqlfluff.format.enabled" = true;
-    "sqlfluff.experimental.format.executeInTerminal" = true;
     "tailwindCSS.experimental.classRegex" = [
       [
         "clsx\\(([^)]*)\\)"
         "(?:'|\"|`)([^']*)(?:'|\"|`)"
       ]
     ];
-    "[terraform]" = {
-      "editor.defaultFormatter" = "hashicorp.terraform";
-      "editor.formatOnSave" = true;
-      "editor.tabSize" = 2;
-    };
     "terraform.languageServer.terraform.path" = "/opt/homebrew/bin/terraform";
-    "[typescriptreact]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
-    };
     "window.zoomLevel" = 1;
     "workbench.colorTheme" = "One Dark Pro Darker";
-    "[yaml]" = {
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
-      "editor.insertSpaces" = true;
-      "editor.tabSize" = 2;
-      "editor.autoIndent" = "advanced";
-      "gitlens.codeLens.scopes" = [ "document" ];
-    };
     "yaml.completion" = false;
     "yaml.customTags" = [
       "!And"
