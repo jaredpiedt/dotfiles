@@ -51,6 +51,7 @@
             pkgs.pinentry_mac
             pkgs.ripgrep
             pkgs.saml2aws
+            pkgs.unstable.terraform
             pkgs.terragrunt
             pkgs.tgswitch
             pkgs.tmux
