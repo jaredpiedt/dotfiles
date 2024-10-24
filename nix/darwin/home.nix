@@ -1,12 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-let
-  inherit (config.lib.file) mkOutOfStoreSymlink;
-in
+{ pkgs, lib, ... }:
 {
   home.username = "jared";
   home.homeDirectory = "/Users/jared";
@@ -25,10 +17,10 @@ in
   programs.home-manager.enable = true;
 
   programs = {
-    git = import ../home/git.nix { inherit config pkgs; };
-    gpg = import ../home/gpg.nix { inherit pkgs; };
+    git = import ../home/git.nix { };
+    gpg = import ../home/gpg.nix { };
     vscode = import ../home/vscode.nix { inherit pkgs; };
-    zsh = import ../home/zsh.nix { inherit config pkgs lib; };
+    zsh = import ../home/zsh.nix { inherit pkgs lib; };
   };
 
   home.file.".gnupg/gpg-agent.conf".text = ''

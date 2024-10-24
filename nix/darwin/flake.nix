@@ -17,16 +17,19 @@
     {
       self,
       nix-darwin,
-      nixpkgs,
       home-manager,
       ...
     }@inputs:
     let
+      add-unstable-packages = final: _prev: {
+        unstable = import inputs.nixpkgs-unstable { system = "aarch64-darwin"; };
+      };
       username = "jared";
       configuration =
         { pkgs, config, ... }:
         {
           nixpkgs.config.allowUnfree = true;
+          nixpkgs.overlays = [ add-unstable-packages ];
 
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
@@ -39,7 +42,7 @@
             pkgs.gnupg
             pkgs.mkalias
             pkgs.neovim
-            pkgs.nixd
+            pkgs.unstable.nixd
             pkgs.nixfmt-rfc-style
             pkgs.jq
             pkgs.pinentry_mac

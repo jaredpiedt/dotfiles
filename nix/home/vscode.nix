@@ -128,6 +128,13 @@
     "nix.enableLanguageServer" = true;
     "nix.formatterPath" = "nixfmt";
     "nix.serverPath" = "nixd";
+    "nix.serverSettings" = {
+      "nixd" = {
+        "formatting" = {
+          "command" = "nixfmt";
+        };
+      };
+    };
     "prettier.singleQuote" = true;
     "prisma.showPrismaDataPlatformNotification" = false;
     "protoc" = { };
