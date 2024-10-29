@@ -45,10 +45,12 @@
             pkgs.gnupg
             pkgs.mkalias
             pkgs.neovim
+            pkgs.nodejs_20
             pkgs.unstable.nixd
             pkgs.nixfmt-rfc-style
             pkgs.jq
             pkgs.pinentry_mac
+            pkgs.rectangle
             pkgs.ripgrep
             pkgs.saml2aws
             pkgs.unstable.terraform
