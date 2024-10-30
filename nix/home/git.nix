@@ -27,6 +27,10 @@
     merge = {
       log = true;
     };
+    push = {
+      default = "simple";
+      autoSetupRemote = true;
+    };
     url = {
       # Multiple insteadOf configurations for GitHub
       "git@github.com:" = {

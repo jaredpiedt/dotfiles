@@ -27,6 +27,7 @@
     pinentry-program ${pkgs.pinentry_mac}/bin/pinentry-mac
   '';
 
+  # Wezterm configuration
   home.file.".wezterm.lua".text = ''
     local wezterm = require 'wezterm'
 
