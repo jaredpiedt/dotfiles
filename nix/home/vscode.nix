@@ -151,7 +151,7 @@
         "(?:'|\"|`)([^']*)(?:'|\"|`)"
       ]
     ];
-    "terraform.languageServer.terraform.path" = "/opt/homebrew/bin/terraform";
+    "terraform.languageServer.terraform.path" = "${pkgs.unstable.terraform}/bin/terraform";
     "window.zoomLevel" = 1;
     "workbench.colorTheme" = "One Dark Pro Darker";
     "yaml.completion" = false;
