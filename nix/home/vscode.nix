@@ -41,6 +41,7 @@
   userSettings = {
     "[graphql]" = {
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.tabSize" = 2;
       "editor.formatOnSave" = true;
     };
     "[hcl]" = {
@@ -53,6 +54,9 @@
       "editor.tabSize" = 2;
     };
     "[javascript]" = {
+      "editor.codeActionsOnSave" = {
+        "source.fixAll.eslint" = "explicit";
+      };
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "editor.insertSpaces" = true;
       "editor.tabSize" = 2;
@@ -87,9 +91,23 @@
       "editor.formatOnSave" = true;
       "editor.tabSize" = 2;
     };
-    "[typescriptreact]" = {
+    "[typescript]" = {
+      "editor.codeActionsOnSave" = {
+        "source.fixAll.eslint" = "explicit";
+      };
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "editor.formatOnSave" = true;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
+    };
+    "[typescriptreact]" = {
+      "editor.codeActionsOnSave" = {
+        "source.fixAll.eslint" = "explicit";
+      };
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+      "editor.insertSpaces" = true;
+      "editor.tabSize" = 2;
     };
     "[yaml]" = {
       "editor.defaultFormatter" = "esbenp.prettier-vscode";

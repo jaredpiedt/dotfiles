@@ -50,9 +50,11 @@
             pkgs.nixfmt-rfc-style
             pkgs.jq
             pkgs.pinentry_mac
+            pkgs.pnpm
             pkgs.rectangle
             pkgs.ripgrep
-            pkgs.saml2aws
+            pkgs.unstable.saml2aws
+            pkgs.unstable.signal-desktop
             pkgs.unstable.terraform
             pkgs.terragrunt
             pkgs.tgswitch
@@ -82,7 +84,7 @@
               rm -rf /Applications/Nix\ Apps
               mkdir -p /Applications/Nix\ Apps
               find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-              while read src; do
+              while read -r src; do
                 app_name=$(basename "$src")
                 echo "copying $src" >&2
                 ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
