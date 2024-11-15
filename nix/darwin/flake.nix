@@ -95,6 +95,7 @@
             dock.persistent-apps = [
               "${pkgs.wezterm}/Applications/WezTerm.app"
               "${pkgs.vscode}/Applications/Visual Studio Code.app"
+              "${pkgs.unstable.signal-desktop}/Applications/Signal.app"
             ];
             finder.AppleShowAllFiles = true;
             magicmouse.MouseButtonMode = "TwoButton";
