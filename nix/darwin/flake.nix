@@ -38,6 +38,7 @@
           # $ nix-env -qaP | grep wget
           environment.systemPackages = [
             pkgs.awscli
+            pkgs.docker
             pkgs.doppler
             pkgs.git
             pkgs.gnupg
@@ -55,6 +56,7 @@
             pkgs.ripgrep
             pkgs.unstable.saml2aws
             pkgs.unstable.signal-desktop
+            pkgs.tableplus
             pkgs.unstable.terraform
             pkgs.terragrunt
             pkgs.tgswitch
@@ -103,6 +105,7 @@
               InitialKeyRepeat = 15; # slider values: 120, 94, 68, 35, 25, 15
               KeyRepeat = 2; # slider values: 120, 90, 60, 30, 12, 6, 2
             };
+            trackpad.Clicking = true;
           };
 
           # Auto upgrade nix package and the daemon service.
