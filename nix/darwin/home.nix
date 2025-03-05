@@ -11,7 +11,7 @@
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -36,6 +36,9 @@
 
     config.color_scheme = 'Tokyo Night'
     config.font_size = 16.0
+
+    -- https://github.com/wez/wezterm/issues/5990#issuecomment-2509141230
+    config.front_end = "WebGpu"
 
     return config
   '';

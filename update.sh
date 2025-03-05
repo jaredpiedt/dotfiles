@@ -3,7 +3,7 @@
 # Check if the system is Darwin (macOS)
 if [[ "$(uname)" == "Darwin" ]]; then
     echo "Updating all flake inputs..."
-    nix flake update ./nix/darwin
+    nix flake update --flake ./nix/darwin
 
     echo "Rebuilding the system..."
     darwin-rebuild switch --flake ./nix/darwin#piedt

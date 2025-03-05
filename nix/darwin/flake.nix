@@ -2,13 +2,16 @@
   description = "Piedt Darwin system flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
-    nix-darwin.url = "github:LnL7/nix-darwin";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-24.11";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+
     # Home Manager
-    home-manager.url = "github:nix-community/home-manager/release-24.05";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
   };
@@ -17,6 +20,7 @@
     {
       self,
       nix-darwin,
+      nix-vscode-extensions,
       home-manager,
       ...
     }@inputs:
@@ -32,7 +36,10 @@
         { pkgs, config, ... }:
         {
           nixpkgs.config.allowUnfree = true;
-          nixpkgs.overlays = [ add-unstable-packages ];
+          nixpkgs.overlays = [ 
+            add-unstable-packages
+            nix-vscode-extensions.overlays.default
+          ];
 
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
@@ -56,6 +63,7 @@
             pkgs.ripgrep
             pkgs.unstable.saml2aws
             pkgs.unstable.signal-desktop
+            pkgs.stripe-cli
             pkgs.tableplus
             pkgs.unstable.terraform
             pkgs.terragrunt

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   enable = true;
-  extensions = with pkgs.vscode-extensions; [
+  extensions = with pkgs.vscode-marketplace; [
     adpyke.codesnap
     # amazonwebservices.aws-toolkit-vscode
     bradlc.vscode-tailwindcss
@@ -85,6 +85,10 @@
       "editor.formatOnSave" = true;
       "editor.insertSpaces" = true;
       "editor.tabSize" = 2;
+    };
+    "[prisma]" = {
+      "editor.defaultFormatter" = "Prisma.prisma";
+      "editor.formatOnSave" = true;
     };
     "[terraform]" = {
       "editor.defaultFormatter" = "hashicorp.terraform";
