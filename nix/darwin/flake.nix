@@ -36,7 +36,7 @@
         { pkgs, config, ... }:
         {
           nixpkgs.config.allowUnfree = true;
-          nixpkgs.overlays = [ 
+          nixpkgs.overlays = [
             add-unstable-packages
             nix-vscode-extensions.overlays.default
           ];
@@ -58,19 +58,21 @@
             pkgs.nixfmt-rfc-style
             pkgs.jq
             pkgs.pinentry_mac
-            pkgs.pnpm
+            pkgs.pnpm_10
             pkgs.rectangle
             pkgs.ripgrep
             pkgs.unstable.saml2aws
-            pkgs.unstable.signal-desktop
             pkgs.stripe-cli
             pkgs.tableplus
             pkgs.unstable.terraform
             pkgs.terragrunt
             pkgs.tgswitch
             pkgs.tmux
+            pkgs.turbo
             pkgs.vscode
             pkgs.wezterm
+            pkgs.yalc
+            pkgs.unstable.claude-code
           ];
 
           fonts.packages = [ (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; }) ];
@@ -105,7 +107,6 @@
             dock.persistent-apps = [
               "${pkgs.wezterm}/Applications/WezTerm.app"
               "${pkgs.vscode}/Applications/Visual Studio Code.app"
-              "${pkgs.unstable.signal-desktop}/Applications/Signal.app"
             ];
             finder.AppleShowAllFiles = true;
             magicmouse.MouseButtonMode = "TwoButton";
